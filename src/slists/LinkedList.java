@@ -17,6 +17,21 @@ public class LinkedList {
 		return head;
 	}
 	
+	public static Node createListStatic() {
+		Node head = null, current = null;
+		for (int i = 1; i < 11; i++) {
+			if (head == null) {
+				head = new Node(i);
+				current = head;
+				continue;
+			}
+			current.next = new Node(i);
+			current = current.next;
+
+		}
+		return head;
+	}
+	
 	public static Node createList(int size) {
 		Node head = null, current = null;
 		if(size == 0) return null;
