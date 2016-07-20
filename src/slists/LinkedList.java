@@ -17,6 +17,47 @@ public class LinkedList {
 		return head;
 	}
 	
+	public static Node createDummyList() {
+		Node head =  new Node(1);
+		Node first =  new Node(2);
+		Node second =  new Node(3);
+		Node third =  new Node(4);
+		Node fourth =  new Node(5);
+		Node fifth =  new Node(6);
+		Node sixth =  new Node(7);
+
+		head.next = first;
+		first.next = second;
+		second.next = third;
+		third.next = fourth;
+		fourth.next = fifth;
+		fifth.next = sixth;
+		
+		return head;
+	}
+	
+	public static Node createLoopList() {
+		Node head =  new Node(1);
+		Node first =  new Node(2);
+		Node second =  new Node(3);
+		Node third =  new Node(4);
+		Node fourth =  new Node(5);
+		Node fifth =  new Node(6);
+		Node sixth =  new Node(7);
+		Node seventh =  new Node(8);
+
+		head.next = first;
+		first.next = second;
+		second.next = third;
+		third.next = fourth;
+		fourth.next = fifth;
+		fifth.next = sixth;
+		sixth.next = seventh;
+		seventh.next = third;
+		
+		return head;
+	}
+	
 	public static Node createListStatic() {
 		Node head = null, current = null;
 		for (int i = 1; i < 11; i++) {

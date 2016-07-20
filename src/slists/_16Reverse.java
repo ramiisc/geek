@@ -14,9 +14,15 @@ public class _16Reverse {
 		return prev;
 	}
 	
-	public static Node reverseRec(Node head) {
-		
+	public static Node reverseRec(Node prev, Node head) {
+		if(head == null) return prev;
+		Node next;
+		next = head.next;
+		head.next = prev;
+		return reverseRec( head, next);
 	}
+	
+	
 
 	public static void main(String args[]) {
 		Node head = null;
@@ -27,6 +33,10 @@ public class _16Reverse {
 		LinkedList.printList(head);
 		length = LinkedList.length(head);
 		head = reverse(head);
+		LinkedList.printList(head);
+		head = reverseRec(null,head);
+		LinkedList.printList(head);
+		head = reverseRec(null,head);
 		LinkedList.printList(head);
 
 	}
